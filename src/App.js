@@ -3,10 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 import {observable} from "mobx";
 import {observer} from "mobx-react";
+import Box1 from "./box1";
 
-class App extends Component {
+@observer class App extends Component {
 
-  increment = ()=>  {}
+
+  increment = ()=>  { this.props.store.increment() }
 
   render() {
     return (
@@ -20,10 +22,15 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <div className="counter_area">
-          <div className="counter_box"> count:   </div>
+          <div className="counter_box"> count: {/*this section intentionally removed */}   </div>
         </div>
 
         <button onClick={this.increment}> bump </button>
+        <div class="stateless_components">
+          <Box1 store={this.props.store} />
+          <Box1 store={this.props.store} />
+          <Box1 store={this.props.store} />
+        </div>
 
       </div>
     );

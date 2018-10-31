@@ -27,6 +27,13 @@
   to { transform: rotate(360deg); }
 }
 
+
+.stateless_components{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+
 .counter_area, .counter_box{
   display:flex;
   align-items: center;
