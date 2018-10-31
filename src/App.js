@@ -4,9 +4,9 @@ import './App.css';
 import {observable} from "mobx";
 import {observer} from "mobx-react";
 
-class App extends Component {
 
-  increment = ()=>  {}
+@observer class App extends Component {
+  increment = ()=>  { this.props.store.increment()}
 
   render() {
     return (
@@ -20,7 +20,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <div className="counter_area">
-          <div className="counter_box"> count:   </div>
+          <div className="counter_box"> count: {this.props.store.count}  </div>
         </div>
 
         <button onClick={this.increment}> bump </button>
