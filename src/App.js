@@ -4,23 +4,27 @@ import './App.css';
 import {observable} from "mobx";
 import {observer} from "mobx-react";
 
-@observer class App extends Component {
-  @observable count = 0;
+class App extends Component {
 
-  increment = ()=>  this.count++
+  increment = ()=>  {}
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-        count: {this.count}
+
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <div className="counter_area">
+          <div className="counter_box"> count:   </div>
+        </div>
+
         <button onClick={this.increment}> bump </button>
+
       </div>
     );
   }
